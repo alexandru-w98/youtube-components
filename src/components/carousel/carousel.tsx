@@ -62,12 +62,16 @@ const Carousel: FC<CarouselProps> = ({
       <div className={styles["carousel"]}>
         <div ref={carouselRef}>
           {notEquals(0)(listTranslateX) && (
-            <button
-              onClick={onLeftArrowClicked}
-              className={`${styles["carousel__arrow--left"]} ${styles["carousel__arrow"]}`}
+            <div
+              className={`${styles["carousel__arrow-container"]} ${styles["carousel__arrow--left"]}`}
             >
-              &lt;
-            </button>
+              <button
+                onClick={onLeftArrowClicked}
+                className={`${styles["carousel__arrow"]}`}
+              >
+                &lt;
+              </button>
+            </div>
           )}
           <div
             className={styles["carousel__list"]}
@@ -77,12 +81,16 @@ const Carousel: FC<CarouselProps> = ({
             {itemsList}
           </div>
           {notEquals(signedMaxTranslate)(listTranslateX) && (
-            <button
-              onClick={onRightArrowClicked}
-              className={`${styles["carousel__arrow--right"]} ${styles["carousel__arrow"]}`}
+            <div
+              className={`${styles["carousel__arrow-container"]} ${styles["carousel__arrow--right"]}`}
             >
-              &gt;
-            </button>
+              <button
+                onClick={onRightArrowClicked}
+                className={`${styles["carousel__arrow"]}`}
+              >
+                &gt;
+              </button>
+            </div>
           )}
         </div>
       </div>
