@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["typings.d.ts", "src"],
   "compilerOptions": {
     "esModuleInterop": true,
     "strict": true,
@@ -13,11 +13,13 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
   "exclude": [
     "dist",
     "node_modules",
+    "dev",
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx"
   ]
